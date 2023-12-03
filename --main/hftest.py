@@ -17,7 +17,7 @@ class HF:
     1. создаешь экз класса, векторка строится по стоковым документам
     2. вызываешь build_vectors, если НОВЫЕ ДОКИ В "inp data"
     3. через query генеришь ответы
-    4. связываешь тг и это через создание логов или(и) придумай как связать через классы(это не сложно)
+    4. связываешь тг и это через создание логов (пример в log.txt) или(и) придумай как связать через классы(это не сложно)
     interface - чисто тест, в работе не используется, на хостинге вызываться не будет
     '''
 
@@ -49,7 +49,7 @@ class HF:
 
     def query(self, request):  # ответ
         query_eng = self.index.as_query_engine()
-        response = query_eng.query('по контекстной информации ответь на русском языке, ' + request)
+        response = query_eng.query('ответь на русском языке, ' + request)
         print(response)
         to_log = str(response)
         with open('log.txt', 'a', encoding='utf-8') as f:
